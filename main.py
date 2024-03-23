@@ -94,21 +94,10 @@ qs = ["发动机怎么造？",
       "支撑结构的图片",
       "机身材料用什么，怎么制造？",
       "论文发表在哪里？期刊名字是什么"]
-response = query_engine.query(q)
-print(response)
-print(q+"============================")
 
-q="详细说明起落架怎么设计，给出参考文献？"
-response = query_engine.query("详细说明起落架怎么设计，给出参考文献？")
-print(response)
-print("============================")
-response = query_engine.query("支撑结构的图片")
-print(response)
-print("============================")
-response = query_engine.query("机身材料用什么，怎么制造？")
-print(response)
-print("============================")
+for q in qs:
+    print(q+"============================")
+    response = query_engine.query(q)
+    print(response)
 
-response = query_engine.query("论文发表在哪里？期刊名字是什么")
-print(response)
-print("============================")
+
