@@ -79,7 +79,7 @@ Settings.embed_model = "local:bge-small-zh-v1.5"
 # check if storage already exists
 PERSIST_DIR = "./storage"
 if not os.path.exists(PERSIST_DIR):
-    documents = SimpleDirectoryReader("./doc").load_data()
+    documents = SimpleDirectoryReader("./doc2").load_data()
     index = VectorStoreIndex.from_documents(documents)
     index.storage_context.persist(persist_dir=PERSIST_DIR)
 else:
@@ -96,8 +96,9 @@ qs = ["发动机怎么造？",
       "论文发表在哪里？期刊名字是什么"]
 
 for q in qs:
-    print(q+"============================")
+    print("问题: " + q + "\n============================")
     response = query_engine.query(q)
-    print(response)
+    print("============================")
+    print("答案: ", response, "\n============================")
 
 
